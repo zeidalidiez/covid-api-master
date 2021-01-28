@@ -2,19 +2,19 @@
 
 const xss = require('xss');
 
-const BarberService = {
-  getAllBarbers(db){
+const walkerService = {
+  getAllWalkers(db){
     return db
       .select('*')
-      .from('barbers');
+      .from('walkers');
         
   },
   getById(knex,id){
     return knex
-      .from('barbers')
+      .from('walkers')
       .first('*')
       .where('id',id);
   },
 };
 
-module.exports = BarberService;
+module.exports = walkerService;
