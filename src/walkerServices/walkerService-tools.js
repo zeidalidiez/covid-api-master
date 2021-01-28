@@ -1,5 +1,5 @@
 'use strict';
-const BarberServiceTools = {
+const walkerServiceTools = {
   getAllServices(db) {
     return db
       .select('*')
@@ -14,4 +14,4 @@ const BarberServiceTools = {
   },
 };
 
-module.exports = BarberServiceTools;
+module.exports = walkerServiceTools;

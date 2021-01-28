@@ -1,7 +1,7 @@
 'use strict';
 const express = require('express');
 const path = require('path');
-const AppointmentService = require('../Appoinments/Appointment-services');
+const AppointmentService = require('../Appointments/Appointment-services');
 const { requireAuth } = require('../middleware/jwt-auth');
 
 
@@ -41,24 +41,24 @@ AppointmentRouter
 AppointmentRouter
   .route('/')
   .post(requireAuth, jsonBodyParser, (req, res, next) => {
-    const {  time, services_id, barber_id } = req.body;
+    const {  time, services_id, walker_id } = req.body;
 
-    const newAppointment = {  time, services_id, barber_id };
+    const newAppointment = {  time, services_id, walker_id };
 
     if (!time && !services_id) {
       return res.status(400).json({
-        error: 'Please select Service and Time'
+        error: 'Please select both a Service and a Time'
       });
     }
     if (!time) {
       return res.status(400).json({
-        error: 'Please select time'
+        error: 'Please select a time'
       });
     }
     if (!services_id) {
 
       return res.status(400).json({
-        error: 'Please select service '
+        error: 'Please select a service '
       });
     }
 
@@ -71,7 +71,7 @@ AppointmentRouter
       .then(appointment => {
         if (!appointment)
           return res.status(400).json({
-            error: 'need to select service and appointment',
+            error: 'please select both service and appointment',
           });
         res
           .status(201)

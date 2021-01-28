@@ -6,13 +6,13 @@ const AppointmentService = {
       .select(
         'app.id',
         'app.time',
-        'barbers.first_name',
+        'walkers.first_name',
         'services.type'
       )
       .leftJoin(
-        'barbers',
-        'app.barber_id',
-        'barbers.id'
+        'walkers',
+        'app.walker_id',
+        'walkers.id'
       )
       .leftJoin(
         'services',
@@ -30,13 +30,13 @@ const AppointmentService = {
         'app.time',
         'app.date_created',
         'app.users_id',
-        'barbers.first_name',
+        'walkers.first_name',
         'services.type'
       )
       .leftJoin(
-        'barbers',
-        'app.barber_id',
-        'barbers.id' 
+        'walkers',
+        'app.walker_id',
+        'walkers.id' 
       )
       .leftJoin(
         'services',

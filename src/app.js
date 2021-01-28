@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 'use strict';
 require('dotenv').config();
 const express = require('express');
@@ -6,11 +7,11 @@ const cors = require('cors');
 const helmet = require('helmet');
 const {NODE_ENV} = require('./config');
 
-const usersRouter = require('./users/user-router');
+const usersRouter = require('./users/userRouter');
 const authRouter = require('./auth/auth-router');
-const barberRouter = require('./barbers/barber-router');
-const serviceRouter = require('./BarberServices/barberService-router');
-const appointmentRouter = require('./Appoinments/Appointment-router');
+const walkerRouter = require('./walkers/walkerRouter');
+const serviceRouter = require('./walkerServices/walkerService-router');
+const appointmentRouter = require('./Appointments/Appointment-router');
 const app = express();
 
 app.use(morgan((NODE_ENV === 'production')
@@ -21,11 +22,11 @@ app.use(morgan((NODE_ENV === 'production')
 app.use(cors());
 app.use(helmet());
 
-app.use('/vinyl/user',usersRouter);
-app.use('/vinyl/auth',authRouter);
-app.use('/vinyl/barber',barberRouter);
-app.use('/vinyl/services',serviceRouter);
-app.use('/vinyl/appointment',appointmentRouter);
+app.use('/covidapi/user',usersRouter);
+app.use('/covidapi/auth',authRouter);
+app.use('/covidapi/walker',walkerRouter);
+app.use('/covidapi/services',serviceRouter);
+app.use('/covidapi/appointment',appointmentRouter);
 
 app.use(function errorHandler(error, req, res, next) {
   let response;

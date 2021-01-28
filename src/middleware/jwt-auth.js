@@ -1,5 +1,5 @@
 'use strict';
-const AuthService = require('../auth/auth-service');
+const authService = require('../auth/auth-service');
 
 
 function requireAuth(req, res, next) {
@@ -13,9 +13,9 @@ function requireAuth(req, res, next) {
   }
 
   try {
-    const payload = AuthService.verifyJwt(bearerToken);
+    const payload = authService.verifyJwt(bearerToken);
 
-    AuthService.getUserWithUserName(
+    authService.getUserWithUserName(
       req.app.get('db'),
       payload.sub
     )

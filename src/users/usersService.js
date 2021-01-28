@@ -1,11 +1,12 @@
+/* eslint-disable no-useless-escape */
 'use strict';
 const REGEX_UPPER_LOWER_NUMBER_SPECIAL = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&])[\S]/;
 const xss = require('xss');
 const bcrypt = require('bcryptjs');
 
-const UsersService = {
+const usersService = {
   hasUserWithUserName(db, user_name) {
-    return db('vinyl_users')
+    return db('covidapi_users')
       .where({ user_name })
       .first()
       .then(user => !!user);
@@ -13,7 +14,7 @@ const UsersService = {
   insertUser(db, newUser) {
     return db
       .insert(newUser)
-      .into('vinyl_users')
+      .into('covidapi_users')
       .returning('*')
       .then(([user]) => user);
   },
@@ -47,4 +48,4 @@ const UsersService = {
     };
   }
 };
-module.exports = UsersService;
+module.exports = usersService;

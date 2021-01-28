@@ -1,3 +1,3 @@
 TRUNCATE
-  Vinyl_users
+  covidapi_users
   RESTART IDENTITY CASCADE;
