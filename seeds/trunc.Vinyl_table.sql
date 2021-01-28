@@ -1,0 +1,3 @@
+TRUNCATE
+  Vinyl_users
+  RESTART IDENTITY CASCADE;
