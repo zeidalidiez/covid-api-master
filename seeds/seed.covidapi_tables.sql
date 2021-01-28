@@ -1,9 +1,9 @@
 BEGIN;
 INSERT INTO covidapi_users (user_name,first_name,last_name ,password,email,phone_number )
 VALUES
-  ('demo',
-  'demofirst',
-  'demoLast',
+  ('demoacc',
+  'demo1',
+  'demo2',
   --password: pass1
   '$2a$12$zjujb7acz65IE0DOM1JJ6.iedBs1Opou6.9ADYHW.DwbfxQsw.niG',
   'demoemail@.com',
@@ -12,12 +12,10 @@ VALUES
 
 INSERT INTO walkers(first_name)
 VALUES
-  ('Shawn'),
-  ('Ben'),
-  ('Sara'),
-  ('Kelly'),
-  ('Travor'),
-  ('Cameron');
+  ('Sean Michaels'),
+  ('Flava Flav'),
+  ('Mr. T'),
+  ('Steve Jobs');
 
 INSERT INTO services (type , price)
 VALUES
