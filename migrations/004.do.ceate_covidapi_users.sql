@@ -14,3 +14,5 @@ ALTER TABLE Appointments
   ADD COLUMN
     users_id INTEGER REFERENCES covidapi_users(id)
     ON DELETE SET NULL;
+
+    

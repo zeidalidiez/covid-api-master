@@ -23,23 +23,44 @@ We are a service to help people walk their dogs during these uneasy times of COV
    * NodeJs
    * Express
    * Knex
+   * Postgrator
+   * JWT
+   * bcryptjs
+   * morgan
    
 ### FrontEnd
 
    * JavaScript
    * React
    * React-Router
+   * jwt-decode
 ---------------------------------------------------------------------------------
 
 ## Routes
 
-### '/' the Landing page route
+app.use('/covidapi/auth',authRouter);
+app.use('/covidapi/walker',walkerRouter);
+app.use('/covidapi/services',serviceRouter);
+app.use('/covidapi/appointment',appointmentRouter);
 
-This is the first page users will land on. Where they can see a demo of our site, sign up, and log in
 
-### '/login' login page route && '/signup' sign up page route
 
-This is where users can sign up or login in order to get an authenticated JWT to access the entire website, if they try access another route without an authenticated JWT they would be redirected to login page
 
-### '/dashboard' the dashboard route is private route for signed up users
-This is where users are directed after sign up and login. Users now have full access to finding dogwalkers, available times, and make an appointment.
+### '/covidapi/' the Landing page route
+
+This is the 'root' endpoint and does not post, fetch, nor delete any data.
+
+
+### '/covidapi/user' user route 
+
+Allows one to post a new user with the required body data.
+
+### '/covidapi/auth/token' provides authentication tokens via post
+
+###  '/covidapi/walker' provides get information from dog walker database
+
+### '/covidapi/services' provides get information from services database
+
+### '/covidapi/appointment' provides information regarding to appointments
+
+* Also provides :/appointment_id route to set and get appointment information from database

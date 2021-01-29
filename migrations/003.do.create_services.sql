@@ -8,3 +8,5 @@ ALTER TABLE Appointments
   ADD COLUMN
     services_id INTEGER REFERENCES services(id)
     ON DELETE SET NULL;
+
+    

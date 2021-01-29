@@ -1,3 +1,5 @@
 TRUNCATE
   covidapi_users
   RESTART IDENTITY CASCADE;
+
+  

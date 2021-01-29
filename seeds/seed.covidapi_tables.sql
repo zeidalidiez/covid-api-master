@@ -22,6 +22,7 @@ VALUES
   ('Single dog','$20'),
   ('Two dogs','$25'),
   ('Three dogs','$30'),
-  ('Four dogs (Maximum)','$35'),
+  ('Four dogs (Maximum)','$35');
 
 COMMIT;
+

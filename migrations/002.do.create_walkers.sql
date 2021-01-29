@@ -6,3 +6,4 @@ ALTER TABLE Appointments
   ADD COLUMN
     walker_id INTEGER REFERENCES walkers(id) 
     ON DELETE SET NULL;
+    
