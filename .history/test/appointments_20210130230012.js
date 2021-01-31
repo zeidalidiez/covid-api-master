@@ -16,12 +16,3 @@ describe("POST /appointment", function () {
     expect(response.status).to.eql(500);
   });
 });
-
-
-describe("DELETE /appointment/appointment_id", function () {
-  it("attempt to delete appointment id 1 with bearer token and without auth", async function () {
-    const response = await request.delete("/appointment/1");
-
-    expect(response.status).to.eql(500);
-  });
-});

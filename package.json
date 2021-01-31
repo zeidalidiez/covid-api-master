@@ -30,8 +30,9 @@
     "migrate": "^1.6.2",
     "morgan": "^1.9.1",
     "pg": "^7.11.0",
-    "xss": "^1.0.6",
-    "postgrator-cli": "^4.0.0"
+    "postgrator-cli": "^4.0.0",
+    "uuid": "^8.3.2",
+    "xss": "^1.0.6"
   },
   "devDependencies": {
     "chai": "^4.2.0",
