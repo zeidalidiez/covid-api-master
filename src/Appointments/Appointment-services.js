@@ -54,9 +54,9 @@ const AppointmentService = {
       .then(([user]) => user);
   },
   deleteAppointment(db, appId) {
-    return db
-      .from('appointments AS app')
-      .where({ appId })
+    return db('appointments')
+      // .from('appointments AS app')
+      .where({ 'id': appId })
       .delete();
   },
 };
