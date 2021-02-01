@@ -29,9 +29,10 @@ AppointmentRouter
 
   })
   .delete((req, res, next) => {
+    const { Appointment_id } = req.params;
     AppointmentService.deleteAppointment(
       req.app.get('db'),
-      req.params.Appointment_id
+      Appointment_id
     )
       .then(() => {
         res.status(204).end();
