@@ -44,8 +44,9 @@ app.use('/covidapi/services',serviceRouter);
 app.use('/covidapi/appointment',appointmentRouter);
 
 
-
-/covidapi
+## API 
+```
+/api
 
 ├── /auth
 │   └── POST
@@ -76,3 +77,4 @@ app.use('/covidapi/appointment',appointmentRouter);
 ├── /services
 │   └── GET
 │       ├── /
+```
