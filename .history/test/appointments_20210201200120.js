@@ -9,8 +9,6 @@ describe("Get /appointment", function () {
   it("return error due to lack of authentication", async function () {
     const response = await request.post("/appointment");
 
-    set('authorization', helpers.makeAuthHeader(testUser))
-
     expect(response.status).to.eql(200);
   });
 });
