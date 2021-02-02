@@ -44,23 +44,37 @@ app.use('/covidapi/services',serviceRouter);
 app.use('/covidapi/appointment',appointmentRouter);
 
 
+## API 
+```
+/api
 
-
-### '/covidapi/' the Landing page route
-
-This is the 'root' endpoint and does not post, fetch, nor delete any data.
-
-
-### '/covidapi/user' user route 
-
-Allows one to post a new user with the required body data.
-
-### '/covidapi/auth/token' provides authentication tokens via post
-
-###  '/covidapi/walker' provides get information from dog walker database
-
-### '/covidapi/services' provides get information from services database
-
-### '/covidapi/appointment' provides information regarding to appointments
-
-* Also provides :/appointment_id route to set and get appointment information from database
+├── /auth
+│   └── POST
+│   |   └── /token
+│   └── PUT
+│       └── /token
+|
+├── /user
+│   └── GET /
+│   |   └── /:id
+│   └── POST
+│       └── /:id
+|
+├── /appointment
+│   └── GET
+│       ├── /
+│   └── POST
+│       ├── /
+|
+├── /appointment/:Appointment_id
+│   └── GET
+│   |   ├── /
+│
+├── /walker
+│   └── GET
+│       └── /:walker_id
+│ 
+├── /services
+│   └── GET
+│       ├── /
+```
