@@ -11,11 +11,11 @@ testUser = {
 
 
 describe("Get /appointment", function () {
-  it("return error or blank due to lack of authentication and supplied data", async function () {
+  it("return error due to lack of authentication", async function () {
     const response = await request.post("/appointment")
 
-    .set("Authorization", `Bearer token=${helpers.makeAuthHeader(testUser)}`)
+    .set('authorization', auth)
 
-    .expect(401);
+    expect(response.status).to.eql(200);
   });
 });
