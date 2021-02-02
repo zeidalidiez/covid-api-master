@@ -80,16 +80,16 @@ describe('Users Endpoints', function () {
   before('make knex instance', () => {
     db = knex({
       client: 'pg',
-      connection: process.env.HEROKU_POSTGRESQL_RED_URL,
+      connection: process.env.TEST_DB_URL,
     });
     app.set('db', db);
   });
 
-  // after('disconnect from db', () => db.destroy());
+  after('disconnect from db', () => db.destroy());
 
-  // before('cleanup', () => helpers.cleanTables(db));
+  before('cleanup', () => helpers.cleanTables(db));
 
-  // afterEach('cleanup', () => helpers.cleanTables(db));
+  afterEach('cleanup', () => helpers.cleanTables(db));
 
   describe('GET /covidapi/appointments', () => {
     beforeEach('insert appointments', () => {
@@ -101,10 +101,9 @@ describe('Users Endpoints', function () {
     });
     it('responds with  empty appointment when appointment not seeded', () => {
       return supertest(app)
-        .get('/covidapi/appointment')
+        .get('/vinyl/appointment')
         .set('authorization', helpers.makeAuthHeader(testUser))
         .expect(200, []);
-        done()
     });
   });
 });

@@ -104,7 +104,6 @@ describe('Users Endpoints', function () {
         .get('/covidapi/appointment')
         .set('authorization', helpers.makeAuthHeader(testUser))
         .expect(200, []);
-        done()
     });
   });
 });
